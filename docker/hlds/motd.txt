@@ -1,0 +1,13 @@
+TIME:
+  20 min/map
+
+MAPCYCLE:
+  rats
+  subtransit
+  x-fire
+  rats
+  crossfire
+  x-fire
+
+SETTINGS:
+  default

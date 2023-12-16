@@ -11,7 +11,7 @@ USER ${STEAM_USER}
 
 WORKDIR /home/${STEAM_USER}/Steam/steamapps/common/Half-Life
 
-COPY server.cfg mapcycle.txt liquids.wad decals.wad valve/
+COPY server.cfg hltv.cfg mapcycle.txt motd.txt liquids.wad decals.wad valve/
 COPY ./maps/. valve/maps/
 COPY ./sound/. valve/sound/
 COPY ./gfx/. valve/gfx/
