@@ -1,6 +1,7 @@
 FROM --platform=amd64 ubuntu:22.04
 
 RUN apt update &&\
+    apt -y upgrade &&\
     apt install -y software-properties-common &&\
     add-apt-repository -y multiverse &&\
     dpkg --add-architecture i386 &&\

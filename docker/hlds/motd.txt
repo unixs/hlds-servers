@@ -3,8 +3,10 @@ TIME:
 
 MAPCYCLE:
   rats
+  dutch_wintersport
   subtransit
   x-fire
+  2000_2_frozen
   rats
   crossfire
   x-fire

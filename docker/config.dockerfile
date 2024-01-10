@@ -16,3 +16,4 @@ COPY ./maps/. valve/maps/
 COPY ./sound/. valve/sound/
 COPY ./gfx/. valve/gfx/
 COPY ./sprites/. valve/sprites/
+COPY ./models/. valve/models/
