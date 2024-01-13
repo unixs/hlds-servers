@@ -57,6 +57,14 @@ cd
 # wait while updating
 ```
 
+### Build configured server image
+
+`steam:hlds-base => steam:config`
+
+```bash
+docker build -t unixs/steam:config -f docker/config.dockerfile docker/hlds
+```
+
 ### Build private server
 
 `steam:hlds-base => steam:hlds`

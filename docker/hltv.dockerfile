@@ -1,4 +1,4 @@
-FROM unixs/steam:config
+FROM unixs/steam:valve-custom
 
 ENV LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"
 
