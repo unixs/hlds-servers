@@ -1,9 +1,15 @@
 # hlds-servers
-Half-Life dedicated servers
+
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/unixs/steam?style=flat-square&cacheSeconds=36000)
+
+
+Half-Life dedicated servers images
 
 ## Build steps
 
-### BASE
+### Base
+
+It is clear Ubuntu system with general deps.
 
 `ubuntu:2204 => steam:base`
 
@@ -11,68 +17,69 @@ Half-Life dedicated servers
 docker build -t unixs/steam:base -f docker/base.dockerfile docker/hlds
 ```
 
-### SteamCMD
+### Valve
 
-`steam:base => steam:cmd`
+It is steam cmd with valve hlds server.
 
-#### On host
-
-```bash
-docker run -it --network host --name cmd unixs/steam:base
-
-# Hack container here
-
-docker commit cmd unixs/steam:cmd
-```
-
-#### Hack container
+`steam:base => steam:valve`
 
 ```bash
-apt -y install steamcmd
-# 2 - AGREE license
-apt clean
+docker build -t unixs/steam:valve -f docker/valve.dockerfile docker/hlds
 ```
 
-### Install steam client and install server
+### Valve custom
 
-`steam:cmd => steam:hlds-base`
+It is valve hlds server with additional maps and settings.
 
-#### On host
+`steam:valve => steam:valve-custom`
 
 ```bash
-docker run -it --network host --name hlds-base unixs/steam:cmd
-
-# Hack container here
-
-docker commit hlds-base unixs/steam:hlds-base
+docker build -t unixs/steam:valve-custom -f docker/valve-custom.dockerfile docker/hlds
 ```
 
-#### Hack container
+## Game images with specific args
+
+### `hlds` (private server)
+
+It is sample of private (password secured) server.
+
+`steam:valve-custom => steam:hlds`
 
 ```bash
-useradd -ms /bin/bash steam
-su steam
-cd
-/usr/games/steamcmd +login anonymous +app_update 90 +quit
-# wait while updating
+docker build -t unixs/steam:hlds -f docker/hlds.dockerfile docker/hlds
 ```
 
-### Build configured server image
+### `hlds-open` (public server)
 
-`steam:hlds-base => steam:config`
+It is sample of public server.
+
+`steam:valve-custom => steam:hlds-open`
 
 ```bash
-docker build -t unixs/steam:config -f docker/config.dockerfile docker/hlds
+docker build -t unixs/steam:hlds-open -f docker/hlds-open.dockerfile docker/hlds
 ```
 
-### Build private server
+### `hltv` (public server)
 
-`steam:hlds-base => steam:hlds`
+It is sample of public HLTV server.
 
-### Build open server
+`steam:valve-custom => steam:hltv`
 
-`steam:hlds-base => steam:hlds-open`
+```bash
+docker build -t unixs/steam:hltv -f docker/hltv.dockerfile docker/hlds
+```
 
-### Build HLTV server
+## Run on host
 
-`steam:hlds-base => steam:hltv`
+Just start container with own options.
+
+```bash
+# hlds-open
+docker run -d --restart=always -h hlds-open.example.net --name hlds-open --net host  unixs/steam:hlds-open
+
+# hlds
+docker run -d --restart=always -h hlds.example.net --name hlds --net host  unixs/steam:hlds
+
+# hltv
+docker run -d --restart=always -h hltv.example.net --name hltv --net host  unixs/steam:hltv
+```
