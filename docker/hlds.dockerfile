@@ -1,4 +1,3 @@
 FROM unixs/steam:valve-custom
 
-ENTRYPOINT [ "./hlds_run" ]
-CMD [ "+maxplayers", "7", "+map", "rats", "+sv_password" ]
+ENTRYPOINT [ "./hlds_run", "+maxplayers", "7", "+map", "rats" ]
