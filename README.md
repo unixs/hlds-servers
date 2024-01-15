@@ -78,7 +78,7 @@ Just start container with own options.
 docker run -d --restart=always -h hlds-open.example.net --name hlds-open --net host  unixs/steam:hlds-open
 
 # hlds
-docker run -d --restart=always -h hlds.example.net --name hlds --net host  unixs/steam:hlds
+docker run -d --restart=always -h hlds.example.net --name hlds --net host  unixs/steam:hlds +sv_password longsecurepassword
 
 # hltv
 docker run -d --restart=always -h hltv.example.net --name hltv --net host  unixs/steam:hltv
