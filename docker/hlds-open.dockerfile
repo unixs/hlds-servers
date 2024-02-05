@@ -34,7 +34,7 @@ ENV LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"
 WORKDIR ${STEAM_DIR}/steamapps/common/Half-Life
 
 
-FROM custom
+FROM valve as custom
 
 # COPY server.cfg hltv.cfg mapcycle.txt motd.txt liquids.wad decals.wad valve/
 # COPY ./maps/. valve/maps/

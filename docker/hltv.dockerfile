@@ -46,7 +46,7 @@ FROM custom
 COPY . valve/
 
 
-FROM custom
+FROM valve as custom
 
 ENV LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"
 
