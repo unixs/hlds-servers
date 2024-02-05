@@ -11,7 +11,7 @@ Half-Life dedicated servers images
 
 It is clear Ubuntu system with general deps.
 
-`ubuntu:2204 => steam:base`
+`ubuntu:22.04 => steam:base`
 
 ```bash
 docker build -t unixs/steam:base -f docker/base.dockerfile docker/hlds
