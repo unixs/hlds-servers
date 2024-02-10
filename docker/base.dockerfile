@@ -29,9 +29,8 @@ ENV STEAM_DISTR="https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux
 RUN curl -sqL ${STEAM_DISTR} | tar zxvf - &&\
   (./steamcmd.sh +login anonymous +app_update 90 +quit || \
   ./steamcmd.sh +login anonymous +app_update 90 +quit) && \
-  mkdir -p ${STEAM_HOME}/.steam/sdk32 &&\
-  ln -vs ${STEAM_DIR}/linux32/steamclient.so \
-    ${STEAM_HOME}/.steam/sdk32/steamclient.so
+  mkdir -p ${STEAM_HOME}/.steam && \
+  ln -vs ${STEAM_DIR}/linux32 ${STEAM_HOME}/.steam/sdk32
 
 ENV LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"
 
