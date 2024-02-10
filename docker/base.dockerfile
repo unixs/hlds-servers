@@ -1,6 +1,7 @@
 FROM --platform=amd64 ubuntu:22.04 as base
 
 ENV STEAM_USER=steam
+ENV STEAM_HOME=/home/${STEAM_USER}
 ENV STEAM_DIR=/home/${STEAM_USER}/Steam
 
 RUN apt update &&\
@@ -26,8 +27,11 @@ FROM base as valve
 ENV STEAM_DISTR="https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"
 
 RUN curl -sqL ${STEAM_DISTR} | tar zxvf - &&\
-    (./steamcmd.sh +login anonymous +app_update 90 +quit || \
-    ./steamcmd.sh +login anonymous +app_update 90 +quit)
+  (./steamcmd.sh +login anonymous +app_update 90 +quit || \
+  ./steamcmd.sh +login anonymous +app_update 90 +quit) && \
+  mkdir -p ${STEAM_HOME}/.steam/sdk32 &&\
+  ln -vs ${STEAM_DIR}/linux32/steamclient.so \
+    ${STEAM_HOME}/.steam/sdk32/steamclient.so
 
 ENV LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"
 
