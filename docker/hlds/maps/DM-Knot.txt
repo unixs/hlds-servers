@@ -1,0 +1,17 @@
+Knot - Deathmatch
+by Dmitry Scrama (http://scrama.3dn.ru)
+
+-------------------
+
+Background:
+Grim dream of surreal artist
+
+-------------------
+
+Thanx to:
+(-=Zheka=-) for troubleshooting with polygon overdosing
+My wife Anet (NawAnya) for design advices
+Everyone from HLRU Forum (http://half-life.ru)
+and HLFX Forum (http://hlfx.ru/forum).
+Epics for Unreals and UT2k4 especially
+id for Quake and Quake III Arena

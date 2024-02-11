@@ -1,0 +1,33 @@
+==================================================================================================================
+Readme for Apocalypse Please by skacky.
+==================================================================================================================
+Info :
+
+Author       : Skacky
+E-mail       : skacky2002@yahoo.fr
+Website      : Not yet.
+File Name    : apocalypse_please.bsp
+Entire Name  : Apocalypse Please
+Build Time   : 3 weeks
+Compilators  : ZHLT 2.3.6 and Batch Compiler
+Programs used: WorldCraft 3.5, Wally 1.55b, PhotoFiltre, Photoshop 5.0
+
+==================================================================================================================
+Additionnal Info :
+
+Wads Used    : Skacky_WOT.wad, halflife.wad
+Sky          : Drkg form Counter-Strike
+Sounds       : From cs_usinesmith by Kawak-Time (very good map, try it !), and form Counter-Strike
+Game Type    : Half-Life Deathmatch
+Recommanded
+players      : 4-12 maximum. Will be cool with 6-8 playerz
+Known bugs   : N/A
+==================================================================================================================
+StoryLine    :
+A map set in a gloomy castle by a bad, cold weather
+==================================================================================================================
+Extra Info : 
+Happy new year !
+Used base visuals of L.J. Paranoid's maps Croon and CroonII for Unreal Tournament 99.
+==================================================================================================================
+This map is (c) Skacky, 2006.
