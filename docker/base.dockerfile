@@ -46,4 +46,7 @@ FROM valve
 # COPY ./sprites/. valve/sprites/
 # COPY ./models/. valve/models/
 
-COPY . valve/
+COPY ./data valve/
+
+ENTRYPOINT [ "./hlds_run" ]
+
