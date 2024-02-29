@@ -57,3 +57,4 @@ build-iPhoneSimulator/
 
 tmp/
 .DS_Store
+docker/.DS_Store
