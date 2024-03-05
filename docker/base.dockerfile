@@ -39,13 +39,6 @@ WORKDIR ${STEAM_DIR}/steamapps/common/Half-Life
 
 FROM valve
 
-# COPY server.cfg hltv.cfg mapcycle.txt motd.txt liquids.wad decals.wad valve/
-# COPY ./maps/. valve/maps/
-# COPY ./sound/. valve/sound/
-# COPY ./gfx/. valve/gfx/
-# COPY ./sprites/. valve/sprites/
-# COPY ./models/. valve/models/
-
 COPY ./data valve/
 
 ENTRYPOINT [ "./hlds_run" ]
