@@ -2,8 +2,8 @@ FROM unixs/steam:base
 
 ENV SERVER_NAME=">> HL1 fufel private <<"
 ENV TIMELIMIT=20
-ENV SW_PASSWORD=''
-ENV RCON_PASSWORD=''
+# ENV SW_PASSWORD=''
+# ENV RCON_PASSWORD=''
 
 RUN sed -i "s/%SERVER_NAME%/${SERVER_NAME}/" valve/server.cfg &&\
   sed -i "s/%TIMELIMIT%/${TIMELIMIT}/" valve/server.cfg &&\
@@ -12,4 +12,4 @@ RUN sed -i "s/%SERVER_NAME%/${SERVER_NAME}/" valve/server.cfg &&\
 
 COPY private/entrypoint.sh private/mapcycle.txt private/motd.txt ./valve/
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+CMD [ "+maxplayers", "7", "+map", "rats" ]
