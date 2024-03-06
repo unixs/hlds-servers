@@ -3,7 +3,7 @@ TIME:
 
 MAPCYCLE:
   rats
-  cityjungle
+  dutch_wintersport
   x-fire
   subtransit
   11castle
