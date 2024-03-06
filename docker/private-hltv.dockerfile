@@ -1,7 +1,5 @@
 FROM unixs/steam:base
 
-ENV LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"
+COPY private/hltv-entrypoint.sh .
 
-COPY hltv.sh .
-
-ENTRYPOINT [ "./hltv.sh" ]
+ENTRYPOINT [ "./hltv-entrypoint.sh" ]

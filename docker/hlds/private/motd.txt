@@ -5,15 +5,15 @@ MAPCYCLE:
   rats
   cityjungle
   x-fire
-  subtransit
   11castle
-  x-fire
+  PrisonRats
   2000_2_frozen
-  rats
-  x-fire
-  crossfire
+  rats_bathroom
+  celtic
+  RoomRats
+  croft_manor
   Gotham
-  x-fire
+  RoomRatsv2
 
 SETTINGS:
   default
