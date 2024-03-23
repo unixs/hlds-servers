@@ -1,0 +1,65 @@
+---
+services:
+
+  hlds-open:
+    image: "unixs/steam:open"
+    container_name: hlds-open
+    restart: always
+    network_mode: host
+    hostname: hlds-open
+    environment:
+      - SRV_HOST=1.2.3.4
+      - RCON_PASS=1234
+      - SV_PASS=1234
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  hlds-private:
+    image: "unixs/steam:private"
+    container_name: hlds-private
+    restart: always
+    network_mode: host
+    hostname: hlds-private
+    environment:
+      - SRV_HOST=1.2.3.4
+      - RCON_PASS=1234
+      - SV_PASS=1234
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  hlds-rats:
+    image: "unixs/steam:rats"
+    container_name: hlds-rats
+    restart: always
+    network_mode: host
+    hostname: hlds-rats
+    environment:
+      - SRV_HOST=1.2.3.4
+      - RCON_PASS=1234
+      - SV_PASS=1234
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  hltv-private:
+    image: "unixs/steam:private-hltv"
+    container_name: hltv-private
+    restart: always
+    network_mode: host
+    depends_on:
+      - hlds-private
+    hostname: hltv-private
+    environment:
+      - SRV_HOST=1.2.3.4
+      - RCON_PASS=1234
+      - SV_PASS=1234
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+...
