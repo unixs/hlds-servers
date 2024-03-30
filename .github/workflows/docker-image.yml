@@ -57,3 +57,36 @@ jobs:
         push: true
         tags: unixs/steam:${{ matrix.mod }}
         # labels: ${{ steps.meta.outputs.labels }}
+
+
+  deploy:
+    needs: build_mods
+    runs-on: ubuntu-latest
+    name: Deploy servers
+    steps:
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa-github-actions
+          config: |
+            Host games
+              HostName ${{ secrets.HOST }}
+              User ${{ secrets.SSH_USER }}
+              IdentityFile ~/.ssh/id_rsa-github-actions
+      #- name: Copy script
+      #  run: scp deploy.sh games:hl/deploy.sh
+      - name: Exec script
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: games
+          #username: ${{ secrets.USERNAME }}
+          #key: ${{ secrets.KEY }}
+          #port: ${{ secrets.PORT }}
+          script: |
+            cd hl
+            docker compose ls
+            docker compose -f servers.yml pull
+            docker compose -f servers.yml stop
+            docker compose -f servers.yml rm
+            docker compose -f servers.yml up -d
