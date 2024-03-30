@@ -11,6 +11,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    name: Docker image ${{ matrix.mod }}
+    strategy:
+      matrix:
+        mod: [base, private, open, rats, private-hltv]
 
     steps:
     - uses: actions/checkout@v3
@@ -21,20 +25,11 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build and push BASE image
+    - name: Build and push ${{ matrix.mod }} image
       uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
       with:
         context: docker/hlds
-        file: docker/base.dockerfile
+        file: docker/${{ matrix.mod }}.dockerfile
         push: true
-        tags: unixs/steam:base
-        # labels: ${{ steps.meta.outputs.labels }}
-
-    - name: Build and push PRIVATE image
-      uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
-      with:
-        context: docker/hlds
-        file: docker/private.dockerfile
-        push: true
-        tags: unixs/steam:private
+        tags: unixs/steam:${{ matrix.mod }}
         # labels: ${{ steps.meta.outputs.labels }}
