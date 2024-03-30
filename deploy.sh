@@ -2,6 +2,7 @@
 
 set -e
 
+cd ~/hl
 docker compose ls
 docker compose -f servers.yml pull
 docker compose -f servers.yml stop
