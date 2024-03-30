@@ -77,19 +77,11 @@ jobs:
               IdentityFile ~/.ssh/id_rsa-github-actions
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-      #- name: Copy script
-      #  run: scp deploy.sh games:hl/deploy.sh
       - name: Exec script
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: games
-          #username: ${{ secrets.USERNAME }}
-          #key: ${{ secrets.KEY }}
-          #port: ${{ secrets.PORT }}
-          script: |
-            cd hl
-            docker compose ls
-            docker compose -f servers.yml pull
-            docker compose -f servers.yml stop
-            docker compose -f servers.yml rm
-            docker compose -f servers.yml up -d
+        run: |
+          ssh games cd hl &&\
+          docker compose ls &&\
+          docker compose -f servers.yml pull &&\
+          docker compose -f servers.yml stop &&\
+          docker compose -f servers.yml rm &&\
+          docker compose -f servers.yml up -d
