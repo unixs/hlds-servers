@@ -77,6 +77,10 @@ jobs:
               IdentityFile ~/.ssh/id_rsa-github-actions
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+      - name: test
+        run: ssh games ls -lha
+      - name: test2
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.HOST }} ls -lha
       - name: Exec script
         run: |
           ssh games cd hl &&\
