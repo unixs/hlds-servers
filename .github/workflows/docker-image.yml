@@ -36,5 +36,5 @@ jobs:
         context: docker/hlds
         file: docker/private.dockerfile
         push: true
-        tags: private
+        tags: unixs/steam:private
         # labels: ${{ steps.meta.outputs.labels }}
