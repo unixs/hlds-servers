@@ -10,7 +10,7 @@ RUN apt update &&\
     dpkg --add-architecture i386 &&\
     apt update &&\
     apt -y upgrade &&\
-    apt -y install htop sudo mc lnav ruby wget curl lib32gcc-s1 lib32stdc++6 &&\
+    apt -y install htop sudo mc lnav curl lib32gcc-s1 lib32stdc++6 &&\
     apt clean &&\
     useradd -ms /bin/bash steam &&\
     sudo -iu steam &&\
