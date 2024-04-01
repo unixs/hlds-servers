@@ -1,0 +1,74 @@
+Double Strife
+
+Somewhere there in the desert, the Black Mesa facility has their weapon testing polygon. 
+Nothing too fancy – few buildings, a channel, power generator and a bunker… Just in case. 
+The team dispatched there was calling it with the codename “Double Strife”.
+Before the cascade the polygon was used for wargames for Black Mesa secure team and the H.E.C.U. team. 
+This was the case during the cascade as well, and the employees involved in the war game had no idea what was happening in the facility.
+Just another day at the polygon, training from dusk till dawn… 
+
+All that changed when the siren started. None knew about the nuke contingency plan, 
+none knew that the nuclear strike can be triggered from the bunker on this polygon… None but one unnamed soldier…
+
+Somewhere there a loud blast was heard, and mushroom cloud towered the sky, trying to reach the setting sun.
+
+Map created with J.A.C.K. 1.1.1064 (64-bit)
+Map compiled with Private version of Half-Life Compilation Tools v1.7.1 64-bit (build Jan  17 2023)
+Map creator: 	Zarko 'Napoleon' Dinev, 2023
+Contact info: 	https://www.moddb.com/mods/flatlinea/
+Discord:		Napoleon#3089
+Discord Chanel:	https://discord.gg/BX8dtUN3
+
+While at this, go and check this really cool Half-Life Mod: Cold Ice Remastered 
+https://www.moddb.com/mods/cold-ice-remastered
+
+Soon, we will bring something really cool there.
+
+Terms of Service:
+
+You are NOT allowed to redistribute this map with this notice missing.
+This map is distributed for free and should not be sold or distributed with any paid products.
+Should you decide to include it in a mod or mappack, please send me a notice and a link to the mod or mudpack.
+
+
+Full Credits:
+
+Zarko 'Napoleon' Dinev - mapping, texturing, detail textures, overview
+
+Textures used from Half-Life Nightwatch
+Inspiration from Half-Life Echoes
+Models, Sounds, Sprites and Textures from Half-Life
+
+Map creation time: 	2 weeks
+Map test time: 		2 weeks 
+Map compile time: 	5m 42s
+
+Map compile statustics:
+
+Object names  Objects/Maxobjs  Memory / Maxmem  Fullness
+------------  ---------------  ---------------  --------
+models            131/512         8384/32768    (25.6%)
+planes          15056/32768     301120/655360   (45.9%)
+vertexes        41681/65535     500172/786420   (63.6%)
+nodes           16466/32767     395184/786408   (50.3%)
+texinfos         5996/32767     239840/1310680  (18.3%)
+faces           29783/65535     595660/1310700  (45.4%)
+* worldfaces    25474/32768          0/0        (77.7%)
+clipnodes       29724/32767     237792/262136   (90.7%)
+leaves          10853/32760     303884/917280   (33.1%)
+* worldleaves    9105/8192           0/0        (111.1%)
+marksurfaces    41049/65535      82098/131070   (62.6%)
+surfedges      141963/512000    567852/2048000  (27.7%)
+edges           73266/256000    293064/1024000  (28.6%)
+texdata          [variable]    9748756/92160000 (10.6%)
+lightdata        [variable]    2964237/50331648 ( 5.9%)
+visdata          [variable]     998761/8388608  (11.9%)
+entdata          [variable]     118361/2097152  ( 5.6%)
+* AllocBlock       62/64             0/0        (96.9%)
+307 textures referenced
+=== Total BSP file data space used: 17355165 bytes ===
+Wad files required to run the map: (None)
+342.70 seconds elapsed [5m 42s]
+
+Napoleon was here, compiling this readme file… at some undisclosed time, 2023.
+Don’t be like him, go and play the game!
