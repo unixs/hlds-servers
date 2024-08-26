@@ -1,4 +1,4 @@
-FROM --platform=amd64 ubuntu:22.04 as base
+FROM --platform=amd64 ubuntu:24.04 as base
 
 ENV STEAM_USER=steam
 ENV STEAM_HOME=/home/${STEAM_USER}
