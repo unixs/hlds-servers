@@ -42,4 +42,3 @@ FROM valve
 COPY ./data valve/
 
 ENTRYPOINT [ "./hlds_run" ]
-
