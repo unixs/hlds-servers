@@ -26,7 +26,7 @@ FROM os as steamcmd
 ENV STEAM_DISTR="https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"
 
 RUN curl -sqL ${STEAM_DISTR} | tar zxvf - &&\
-  (./steamcmd.sh) && \
+  (./steamcmd.sh +quit) && \
   mkdir -p ${STEAM_HOME}/.steam && \
   ln -vs ${STEAM_DIR}/linux32 ${STEAM_HOME}/.steam/sdk32
 
