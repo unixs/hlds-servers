@@ -34,7 +34,7 @@ jobs:
   build_l4d2:
     needs: build_cmd
     runs-on: ubuntu-latest
-    name: Docker image Left4Dead 2
+    name: Docker image Left 4 Dead 2
 
     steps:
     - uses: actions/checkout@v3
@@ -51,7 +51,7 @@ jobs:
         context: docker/l4d2
         file: docker/l4d2.dockerfile
         push: true
-        tags: unixs/steam:lfd2
+        tags: unixs/steam:l4d2
         # labels: ${{ steps.meta.outputs.labels }}
 
 
