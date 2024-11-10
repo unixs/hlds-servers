@@ -107,7 +107,9 @@ jobs:
 
 
   deploy:
-    needs: build_hlds_mods
+    needs:
+      - build_hlds_mods
+      - build_l4d2
     runs-on: ubuntu-latest
     name: Deploy servers
     steps:
