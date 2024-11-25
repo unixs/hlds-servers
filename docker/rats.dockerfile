@@ -1,4 +1,4 @@
-FROM unixs/steam:base
+FROM unixs/steam:valve
 
 ENV SERVER_MOD="rats"
 ENV SERVER_NAME=">> HL1 fufel - ${SERVER_MOD} <<"

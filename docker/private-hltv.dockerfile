@@ -1,4 +1,4 @@
-FROM unixs/steam:base
+FROM unixs/steam:valve
 
 COPY private/hltv-entrypoint.sh .
 
