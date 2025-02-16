@@ -65,3 +65,4 @@ docker run -d --restart=always -h hlds-private.example.net --name hlds-private -
 # hltv
 docker run -d --restart=always -h private-hltv.example.net --name hltv-private --net host -e SRV_HOST=123.75.156.137 unixs/steam:private-hltv
 ```
+ok
