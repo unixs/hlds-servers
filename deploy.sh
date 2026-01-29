@@ -4,9 +4,9 @@ set -e
 
 cd ~/hl
 docker compose ls
-docker compose -f servers.yml pull
-docker compose -f servers.yml stop
-docker compose -f servers.yml rm -f
-docker compose -f servers.yml up -d
+docker compose pull
+docker compose stop
+docker compose rm -f
+docker compose up -d
 docker compose ls
 docker image prune -f
