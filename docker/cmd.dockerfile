@@ -1,4 +1,4 @@
-FROM --platform=amd64 ubuntu:24.04 as os
+FROM --platform=amd64 ubuntu:24.04 AS os
 
 ENV STEAM_USER=steam
 ENV STEAM_HOME=/home/${STEAM_USER}
@@ -21,7 +21,7 @@ USER ${STEAM_USER}
 WORKDIR ${STEAM_DIR}
 
 
-FROM os as cmd
+FROM os AS cmd
 
 ENV STEAM_DISTR="https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"
 
