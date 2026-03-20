@@ -1,4 +1,4 @@
-FROM unixs/steam:valve
+FROM unixs/steam:valve-metamod
 
 ENV SERVER_MOD="private"
 ENV SERVER_NAME=">> HL1 fufel - ${SERVER_MOD} <<"
