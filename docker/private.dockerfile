@@ -11,7 +11,7 @@ COPY ${SERVER_MOD}/entrypoint.sh .
 
 RUN sed -i "s/%SERVER_NAME%/${SERVER_NAME}/" valve/server.cfg &&\
   sed -i "s/%TIMELIMIT%/${TIMELIMIT}/" valve/server.cfg &&\
-  sed -i "s/%CDN_URL%/${CDN_URL}" valve/server.cfg &&\
+  sed -i "s|%CDN_URL%|${CDN_URL}|" valve/server.cfg &&\
   sed -i "s/%TIMELIMIT%/${TIMELIMIT}/" valve/motd.txt
 #  sed -i "s/%SW_PASSWORD%/${SW_PASSWORD}/" valve/server.cfg &&\
 #  sed -i "s/%RCON_PASSWORD%/${RCON_PASSWORD}/" valve/server.cfg

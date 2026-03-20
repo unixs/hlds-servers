@@ -14,6 +14,8 @@ FROM unixs/steam:cmd
 ENV GAME_ID=90
 ENV CDN_URL="https://cdn.fufel.net/"
 
+ARG METAMOD_SO_PATH=addons/metamod/dlls/metamod.so
+
 
 RUN (./steamcmd.sh +login anonymous +app_update ${GAME_ID} +quit || \
   ./steamcmd.sh +login anonymous +app_update ${GAME_ID} +quit) && \
@@ -24,6 +26,6 @@ WORKDIR ${STEAM_DIR}/steamapps/common/Half-Life
 
 COPY ./data valve/
 COPY --from=metamod metamod-p/metamod/opt.linux_i386/metamod.so valve/addons/metamod/dlls/
-RUN sed -i "s/dlls\/hl.so/addons\/metamod\/dlls\/metamod.so/" valve/liblist.gam
+RUN sed -i "s|dlls/hl.so|${METAMOD_SO_PATH}|" valve/liblist.gam
 
 ENTRYPOINT [ "./hlds_run" ]
