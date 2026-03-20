@@ -109,7 +109,7 @@ jobs:
     name: Docker image ${{ matrix.mod }}
     strategy:
       matrix:
-        mod: [private, open, rats, private-hltv]
+        mod: [open, rats, private-hltv]
 
     steps:
     - uses: actions/checkout@v3
@@ -135,7 +135,7 @@ jobs:
     name: Docker image ${{ matrix.mod }}
     strategy:
       matrix:
-        mod: [open]
+        mod: [private]
 
     steps:
     - uses: actions/checkout@v3
