@@ -1,4 +1,4 @@
-FROM --platform=amd64 ubuntu:24.04 AS os
+FROM --platform=amd64 ubuntu:noble AS os
 
 ENV STEAM_USER=steam
 ENV STEAM_HOME=/home/${STEAM_USER}
@@ -23,7 +23,7 @@ WORKDIR ${STEAM_DIR}
 
 FROM os AS cmd
 
-ENV STEAM_DISTR="https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"
+ARG STEAM_DISTR="https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"
 
 RUN curl -sqL ${STEAM_DISTR} | tar zxvf - &&\
   (./steamcmd.sh +quit) && \
