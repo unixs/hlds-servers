@@ -158,6 +158,7 @@ jobs:
   deploy:
     needs:
       - build_valve_mods
+      - build_valve_mods_metamod
       # - build_l4d2
     runs-on: ubuntu-latest
     name: Deploy servers
