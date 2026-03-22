@@ -1,7 +1,7 @@
 FROM unixs/steam:cmd
 
 
-ENV GAME_ID=90
+ARG GAME_ID=90
 
 RUN (./steamcmd.sh +login anonymous +app_update ${GAME_ID} +quit || \
   ./steamcmd.sh +login anonymous +app_update ${GAME_ID} +quit) && \

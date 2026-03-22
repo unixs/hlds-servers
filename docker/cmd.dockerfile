@@ -1,4 +1,4 @@
-FROM --platform=amd64 ubuntu:noble AS os
+FROM --platform=linux/amd64 ubuntu:noble AS os_amd64
 
 ENV STEAM_USER=steam
 ENV STEAM_HOME=/home/${STEAM_USER}
@@ -22,7 +22,7 @@ USER ${STEAM_USER}
 WORKDIR ${STEAM_DIR}
 
 
-FROM os AS cmd
+FROM os_amd64 AS cmd
 
 ARG STEAM_DISTR="https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"
 

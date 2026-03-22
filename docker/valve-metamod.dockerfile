@@ -11,8 +11,8 @@ RUN apt update && apt upgrade -y && \
 
 FROM unixs/steam:cmd
 
-ENV GAME_ID=90
-ENV CDN_URL="https://cdn.fufel.net/"
+ARG GAME_ID=90
+ENV CDN_URL="https://cdn.fufel.net"
 
 ARG METAMOD_SO_PATH=addons/metamod/dlls/metamod.so
 
