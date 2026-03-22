@@ -3,7 +3,7 @@ FROM --platform=amd64 ubuntu:noble AS os
 ENV STEAM_USER=steam
 ENV STEAM_HOME=/home/${STEAM_USER}
 ENV STEAM_DIR=/home/${STEAM_USER}/Steam
-ENV CDN_URL="https://cdn.fufel.net/"
+ENV CDN_URL="https://cdn.fufel.net"
 
 RUN apt update &&\
   apt install -y software-properties-common &&\
